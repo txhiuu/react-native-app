@@ -1,13 +1,18 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Pressable } from 'react-native'
 import { Link } from 'expo-router'
 import React from 'react'
 import { Button } from '@react-navigation/elements'
 import { ThemedView } from '@/components/themed-view'
 import { ThemedText } from '@/components/themed-text'
 import { LinearGradient } from 'expo-linear-gradient'
-
+import { Colors } from '@/constants/theme'
+import Spacer from '@/components/spacer'
 function index() {
+  const handleSubmit = () => {
+      console.log('login from submit')
+    }
   return (
+  
     // <View style={styles.constant}>
 
     //   <Image source={require('../../assets/images/logo.png')} style={{width: 50, height: 50}} />
@@ -32,9 +37,18 @@ function index() {
 
       <TextInput placeholder='Password' value='**********'style={styles.inputemail}/>
 
-      <TouchableOpacity style={styles.button}>
+      
+      <Spacer height={15}/>
+      {/* <TouchableOpacity style={styles.button}>
         <Text style={{textAlign: 'center', fontWeight: 'bold', fontSize: 20}}>Login</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+
+      <Pressable 
+      onPress={handleSubmit}
+      style={({pressed}) => [styles.btn, pressed && styles.pressed]}
+      >
+      <ThemedText style={{color: "#f2f2f2", textAlign: "center"}}>Login</ThemedText>
+      </Pressable>
 
        <Link href="/explore" style={styles.link}>
         <ThemedText style={{textAlign: 'center'}}>Don't have any account</ThemedText>
@@ -70,8 +84,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 1,
         backgroundColor: '#eee',
-        paddingLeft: 10,
-        marginBottom: 20,
+        paddingLeft: 10
       },
 
       link:{
@@ -86,6 +99,15 @@ const styles = StyleSheet.create({
 
       elevation: 5,
 
+      },
+      btn: {
+        backgroundColor: Colors.primary,
+        padding: 15,
+        borderRadius: 5,
+      },
+
+      pressed:{
+        opacity: 0.8
       }
     // constant:{
     //     flex: 1,
