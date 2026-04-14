@@ -8,7 +8,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 const _layout = () => {
   
   const colorScheme = useColorScheme()
-  const theme = Colors[colorScheme] ?? Colors.light
+  const theme = Colors[colorScheme as 'light' | 'dark'] ?? Colors.light //ép kiểu
   return (
     // <Stack screenOptions={{headerStyle: {backgroundColor: theme.navBackground}, headerTintColor: theme.title, headerTitleAlign: 'center'}}>
     //   <Stack.Screen name = "index" options={{title: 'Home'}} />

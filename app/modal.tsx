@@ -1,29 +1,40 @@
-import { Link } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import { StyleSheet} from 'react-native'
+import { ThemedView } from '@/components/themed-view'
+import { ThemedText } from '@/components/themed-text'
+import { Link } from 'expo-router'
+import React from 'react'
 
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-
-export default function ModalScreen() {
+const Main = () => {
   return (
-    <ThemedView style={styles.container}>
-      <ThemedText type="title">This is a modal</ThemedText>
-      <Link href="/" dismissTo style={styles.link}>
-        <ThemedText type="link">Go to home screen</ThemedText>
+    <ThemedView style={styles.constant}>
+      <ThemedText style={{fontWeight: "bold", fontSize: 20, textAlign: "center"}}>
+          A Website that you can buy books!!!
+      </ThemedText>
+
+      <Link href="/login" style={styles.link}>
+          <ThemedText style={{textAlign: 'center'}}>Login Page</ThemedText>
+      </Link>
+
+      <Link href="/register" style={styles.link}>
+          <ThemedText style={{textAlign: 'center'}}>Register Page</ThemedText>
+      </Link>
+
+        <Link href="/(dashboard)/profile" style={styles.link}>
+          <ThemedText style={{textAlign: 'center'}}>Profile Page</ThemedText>
       </Link>
     </ThemedView>
-  );
+  )
 }
 
+export default Main
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
-  },
-  link: {
-    marginTop: 15,
-    paddingVertical: 15,
-  },
-});
+  constant:{
+        flex : 1,
+        justifyContent: 'center',
+        padding: 20
+      },
+   link:{
+        marginVertical: 10,
+      },
+})
