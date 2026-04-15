@@ -14,7 +14,7 @@ function index() {
     }
   return (
 
-    <LinearGradient style={styles.constant} colors={["#FFFFFF", "#FFFF00", "#FF00FF"]} start={{x: 0, y: 0}} end={{x:1, y:1}}>
+    <LinearGradient style={styles.constant} colors={["#333399","#6666FF", "#FF3300","#CC3300", "#FF6600"]} start={{x: 1, y: 0}} end={{x:1, y:1}}>
    
       <Image source={require('../../assets/images/logo.png')} style={styles.logo}/>
       <ThemedText style={styles.instroduce}>Welcome to my website</ThemedText>

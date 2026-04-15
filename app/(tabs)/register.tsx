@@ -35,7 +35,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 
 const Register = () => {
   return (
-    <LinearGradient style={styles.constant} colors={["#FFFFFF", "#FFFF00", "#FF00FF"]} start={{x:0, y:0}} end={{x:1, y:1}}>
+    <LinearGradient style={styles.constant} colors={["#333399","#6666FF", "#FF3300","#CC3300", "#FF6600"]} start={{x:1, y:0}} end={{x:1, y:1}}>
       <Image source={require('../../assets/images/logo.png')} style={styles.logo}/>
       <ThemedText style={styles.instroduce} >Register</ThemedText>
 
@@ -44,7 +44,7 @@ const Register = () => {
       <TextInput placeholder='Password' value='********' style={styles.inputemail}/>
 
       <TouchableOpacity style={styles.button}>
-      <Link href="/" style={{textAlign: 'center', fontWeight: 'bold', fontSize: 18}}>Confirm</Link>
+      <Link href="/(tabs)/login" style={{textAlign: 'center', fontWeight: 'bold', fontSize: 18}}>Confirm</Link>
       </TouchableOpacity>
       
     </LinearGradient>
