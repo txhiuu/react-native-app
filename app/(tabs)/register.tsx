@@ -1,42 +1,24 @@
-// import { StyleSheet, Text, View } from 'react-native'
-// import {Link} from 'expo-router'
-// import React from 'react'
 
-// const explore = () => {
-//   return (
-//     <View style={styles.constant}>
-//       <Text style={{fontSize: 18, fontWeight: "bold"}}>Hi everyone!!!</Text>
-
-//       <Link href={"/"} style={styles.link}>Go back Index</Link>
-//     </View>
-//   )
-// }
-
-// export default explore
-
-// const styles = StyleSheet.create({
-//   constant:{
-//         flex: 1,
-//         justifyContent: "center",
-//         alignItems: "center"
-//     }, 
-//     link:{
-//       marginVertical: 10,
-//       borderBottomWidth: 1
-//     }
-// })
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image } from 'react-native'
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, SafeAreaView, ScrollView } from 'react-native'
 import {Link} from 'expo-router'
-import React from 'react'
-import { ThemedView } from '@/components/themed-view'
+import React, {useState} from 'react'
 import { ThemedText } from '@/components/themed-text'
 import { LinearGradient } from 'expo-linear-gradient'
+import Spacer from '@/components/spacer'
+import { EvilIcons } from '@expo/vector-icons'
+import ThemedButton from '@/components/themed-button'
 
 
 const Register = () => {
+  const handleSubmit = () => {
+      console.log('login from submit')
+  }
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isChecked, setChecked] = useState(false);
   return (
-    <LinearGradient style={styles.constant} colors={["#333399","#6666FF", "#FF3300","#CC3300", "#FF6600"]} start={{x:1, y:0}} end={{x:1, y:1}}>
-      <Image source={require('../../assets/images/logo.png')} style={styles.logo}/>
+    <LinearGradient style={styles.constant} colors={["#FF0000","#BB0000", "#FF9999"]} start={{x:1, y:0}} end={{x:1, y:1}}>
+      {/* <Image source={require('../../assets/images/logo.png')} style={styles.logo}/>
       <ThemedText style={styles.instroduce} >Register</ThemedText>
 
       <TextInput placeholder='Email' value='ex. nguyenvana@gmail.com' style={styles.inputemail}/>
@@ -45,8 +27,105 @@ const Register = () => {
 
       <TouchableOpacity style={styles.button}>
       <Link href="/(tabs)/login" style={{textAlign: 'center', fontWeight: 'bold', fontSize: 18}}>Confirm</Link>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+      <View style={styles.constant}>
+       <SafeAreaView style={{flex:1}}>
+         <View style={{height: 100}}>
+          <View style={styles.whitecard}>
+            <ScrollView style={styles.scroll}>
+              <View style={styles.title}>
+                <ThemedText style={styles.text1title}>
+                  SIGN UP
+                </ThemedText>
+                <ThemedText style={styles.text2title}>
+                  Books Store
+                </ThemedText>
+              </View>
+
+       <Spacer height={30}/>
+                <ThemedText style={styles.textinput}>
+                  EMAIL ADDRESS:
+                </ThemedText>
+              <View style={styles.viewinput}>
+                <EvilIcons name="user" color='#77777' size={30} style={styles.iconinput}/>
+                <TextInput 
+                placeholder='Email' 
+                value=''
+                onChangeText={(text) => setEmail(text)} 
+                style={styles.inputemail}
+                keyboardType="email-address"
+                autoCapitalize="none"
+                />
+              </View>
+              <ThemedText style={styles.textinput}>
+                  PASSWORD:
+                </ThemedText>
+              <View style={styles.viewinput}>
+                <EvilIcons name="lock" color='#77777' size={30} style={styles.iconinput}/>
+                <TextInput 
+                placeholder='Email' 
+                value=''
+                onChangeText={(text) => setPassword(text)} 
+                style={styles.inputemail}
+                secureTextEntry={true}
+                />
+              </View>
+              <ThemedText style={styles.textinput}>
+                  REENTER PASSWORD:
+                </ThemedText>
+              <View style={styles.viewinput}>
+                <EvilIcons name="lock" color='#77777' size={30} style={styles.iconinput}/>
+                <TextInput 
+                placeholder='Email' 
+                value=''
+                onChangeText={(text) => setPassword(text)} 
+                style={styles.inputemail}
+                secureTextEntry={true}
+                />
+              </View>
       
+      <Spacer height={10}/>
+               <View style={styles.constants}>
+                <ThemedButton onPress={handleSubmit} style={{borderRadius: 40, backgroundColor:"#FF0000"}}>
+                <ThemedText style={{color: "#f2f2f2", textAlign:'center', fontWeight:'bold', fontSize: 17}}>SIGN UP</ThemedText>
+                </ThemedButton>
+              </View>
+       <Spacer height={10}/>
+
+              <View style={{}}>  
+                <ThemedText style={{color: '#777777'}}>
+                  ------------------------------------OR-------------------------------------
+                </ThemedText>
+              </View>
+        
+        <Spacer height={15}/>
+              <View style={{flexDirection:'row', alignSelf: 'center'}}>
+            <Link href='/(dashboard)/profile'>
+              <View style={styles.otherlog1} >
+                <EvilIcons name="sc-google-plus" size={25} style={{paddingLeft: 5}}/>
+                <ThemedText style={{fontSize: 18, paddingLeft: 10, color:'#ffff'}}>Google</ThemedText>
+              </View>
+            </Link>
+          <Spacer width={30}/>
+            <Link href='/(dashboard)/books'>
+              <View style={styles.otherlog2} >
+                <EvilIcons name="sc-facebook" size={25} style={{paddingLeft: 5}}/>
+                <ThemedText style={{fontSize: 18, paddingLeft: 10, color: '#ffff'}}>Facebook</ThemedText>
+              </View>
+            </Link>
+           </View>
+
+<Spacer height={50}/>
+        <View style={styles.end} >
+          <ThemedText style={{color:'#777777'}}>You already have an account.</ThemedText>
+          <Link href='/login' style={styles.lastlink}>Sign in</Link>
+        </View>
+
+            </ScrollView>
+          </View>
+         </View>
+       </SafeAreaView>
+      </View>
     </LinearGradient>
   )
 }
@@ -57,35 +136,118 @@ const styles = StyleSheet.create({
   constant:{
         flex : 1,
         justifyContent: 'center',
-        padding: 20
+        padding: 10
+      },
+      constants:{
+        padding: 5
+      },
+  whitecard:{
+        backgroundColor: "#ffff",
+        borderRadius: 40, 
+        elevation: 20,
+        width: '100%',
+        minHeight: 700
+      },
+      scroll:{
+        padding: 5,
+        paddingTop: 10
       },
    
-       logo:{
-        width: 80,
-        height: 80,
-        alignSelf: 'center' // can chinh anh ra giua # textalign va AlignItem
+      title:{
+       marginTop: 20
       },
-
-   instroduce:{
-        fontWeight: 'bold',
-        fontSize: 20,
+ 
+      text1title:{
         textAlign: 'center',
-        marginBottom: 15
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#FF0000',
+        fontStyle: 'normal'
       },
-      inputemail:{
-        borderRadius: 10,
-        borderWidth: 1,
-        backgroundColor: '#eee',
+
+      text2title:{
+        textAlign: 'center', 
+        fontSize: 15, 
+        color:'#777777'
+      },
+
+      textinput:{
+        fontWeight:'bold', 
+        paddingLeft: 10, 
+        marginBottom: 5
+      },
+
+      viewinput:{
+       flexDirection:'row',
+       alignItems: 'center', 
+       backgroundColor: '#eee', 
+       borderRadius: 35,
+       marginLeft: 5,
+       marginRight: 5,
+       marginBottom: 15
+      },
+      
+       inputemail:{
+        flex:1,
+        paddingTop: 20,
+        paddingLeft: 15,
+        marginBottom: 10,
+        height: 50,
+      },
+
+      iconinput:{
+       marginRight: 10,
+       paddingLeft: 15
+      },
+      
+       otherlog1:{
+        flexDirection:'row',
+        borderRadius: 40,
+        alignItems:'center',
+        backgroundColor:'#FF0000',
+        width: 140,
+        height: 50,
         paddingLeft: 10,
-        marginBottom: 20
       },
-      button:{
-      backgroundColor: "#fff",
-      padding: 20,
-      borderRadius: 10,
 
-      elevation: 5
+      otherlog2:{
+        flexDirection:'row',
+        borderRadius: 40,
+        alignItems:'center',
+        backgroundColor:'#006dfb',
+        width: 140,
+        height: 50,
+        paddingLeft: 10,
+      },
+      
+      end:{
+        flexDirection: 'row',
+        alignSelf: 'center'
+      },
+      
+      lastlink:{
+        color:'#FF0000',
+        paddingLeft: 5,
+        fontWeight: 'bold',
+        borderBottomWidth: 0.3,
+        paddingTop: 2 
+      },
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
       }
-
-})
+)

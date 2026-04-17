@@ -27,12 +27,12 @@ function index() {
           <View style={{height: 100}}>
             <View style={styles.whitecard}>
               <ScrollView style={styles.scroll}>
-                <Image source={require('../../assets/images/logo.png')} style={styles.logo}/> 
-                <ThemedText style={styles.word}>
+                {/* <Image source={require('../../assets/images/logo.png')} style={styles.logo}/>  */}
+                <ThemedText style={styles.text1title}>
                   SIGN IN
                 </ThemedText>
 
-                <ThemedText style={{textAlign: 'center', fontSize: 15, color:'#777777'}}>
+                <ThemedText style={styles.text2title}>
                   Books Store
                 </ThemedText>
                 
@@ -72,7 +72,7 @@ function index() {
               </View>
 
 
- <View style={{flexDirection:'row', marginTop: 10}}>
+ <View style={{flexDirection:'row', marginTop: 10, marginLeft: 10}}>
                 <Checkbox
                 style={styles.checkbox}
                 value={isChecked}
@@ -111,16 +111,16 @@ function index() {
 
         <View style={{flexDirection:'row', alignSelf: 'center'}}>
             <Link href='/(dashboard)/profile'>
-              <View style={styles.otherlog} >
+              <View style={styles.otherlog1} >
                 <EvilIcons name="sc-google-plus" size={25} style={{paddingLeft: 5}}/>
-                <ThemedText style={{fontSize: 18, paddingLeft: 10}}>Google</ThemedText>
+                <ThemedText style={{fontSize: 18, paddingLeft: 10, color:'#ffff'}}>Google</ThemedText>
               </View>
             </Link>
           <Spacer width={30}/>
             <Link href='/(dashboard)/books'>
-              <View style={styles.otherlog} >
+              <View style={styles.otherlog2} >
                 <EvilIcons name="sc-facebook" size={25} style={{paddingLeft: 5}}/>
-                <ThemedText style={{fontSize: 18, paddingLeft: 10}}>Facebook</ThemedText>
+                <ThemedText style={{fontSize: 18, paddingLeft: 10, color:'#ffff'}}>Facebook</ThemedText>
               </View>
             </Link>
         </View>
@@ -165,13 +165,19 @@ const styles = StyleSheet.create({
         paddingTop: 10
       },
       
-      word:{
-        marginTop: 5,
+      text1title:{
+        marginTop: 50,
         textAlign: 'center',
         fontSize: 20,
         fontWeight: 'bold',
         color: '#FF0000',
         fontStyle: 'normal'
+      },
+
+      text2title:{
+        textAlign: 'center', 
+        fontSize: 15, 
+        color:'#777777'
       },
 
       viewinput:{
@@ -221,11 +227,21 @@ const styles = StyleSheet.create({
   //   fontSize: 14,
   // },
 
-      otherlog:{
+      otherlog1:{
         flexDirection:'row',
         borderRadius: 40,
         alignItems:'center',
-        backgroundColor:'#eee',
+        backgroundColor:'#FF0000',
+        width: 140,
+        height: 50,
+        paddingLeft: 10,
+      },
+
+      otherlog2:{
+        flexDirection:'row',
+        borderRadius: 40,
+        alignItems:'center',
+        backgroundColor:'#0073ff',
         width: 140,
         height: 50,
         paddingLeft: 10,
