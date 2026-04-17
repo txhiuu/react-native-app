@@ -15,7 +15,7 @@ const _layout = () => {
     //   <Stack.Screen name = "explore" options={{title: 'Register'}} />
     // </Stack>
     <Stack screenOptions={{headerStyle: {backgroundColor: theme.background}, headerTintColor: theme.tint, headerTitleAlign: 'center'}}>
-      <Stack.Screen name = "login" options={{title: 'Home'}}/>
+      <Stack.Screen name = "login" options={{title: 'Login'}}/>
       <Stack.Screen name = "register" options={{title: 'Register'}}/>
     </Stack>
   )

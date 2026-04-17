@@ -42,6 +42,7 @@ const DashboardLayout = () => {
           name={focused ?'create' : 'create-outline'}
           color={focused ? theme.tabIconDefault : theme.icon}
         />
+        
       )}}
       />
      
