@@ -17,17 +17,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [isChecked, setChecked] = useState(false);
   return (
-    <LinearGradient style={styles.constant} colors={["#FF0000","#BB0000", "#FF9999"]} start={{x:1, y:0}} end={{x:1, y:1}}>
-      {/* <Image source={require('../../assets/images/logo.png')} style={styles.logo}/>
-      <ThemedText style={styles.instroduce} >Register</ThemedText>
-
-      <TextInput placeholder='Email' value='ex. nguyenvana@gmail.com' style={styles.inputemail}/>
-      <TextInput placeholder='Password' value='********' style={styles.inputemail}/>
-      <TextInput placeholder='Password' value='********' style={styles.inputemail}/>
-
-      <TouchableOpacity style={styles.button}>
-      <Link href="/(tabs)/login" style={{textAlign: 'center', fontWeight: 'bold', fontSize: 18}}>Confirm</Link>
-      </TouchableOpacity> */}
+    <LinearGradient style={styles.constant} colors={["#F2E6EE","rgba(126, 87, 143, 0.87)"]} start={{x:1, y:0}} end={{x:1, y:1}}>
       <View style={styles.constant}>
        <SafeAreaView style={{flex:1}}>
          <View style={{height: 100}}>

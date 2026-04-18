@@ -21,7 +21,7 @@ function index() {
 
   return (
 
-    <LinearGradient style={{flex: 1}} colors={["#FF0000","#BB0000", "#FF9999"]} start={{x: 1, y: 0}} end={{x:1, y:1}}>
+     <LinearGradient style={{flex: 1}} colors={["#F2E6EE","rgba(126, 87, 143, 0.87)"]} start={{x: 1, y: 0}} end={{x:1, y:1}}>
       <View style={styles.constant}>
         <SafeAreaView style={{flex: 1}}>
           <View style={{height: 100}}>
