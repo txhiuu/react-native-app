@@ -7,6 +7,8 @@ import { LinearGradient } from 'expo-linear-gradient'
 import Spacer from '@/components/spacer'
 import { EvilIcons } from '@expo/vector-icons'
 import ThemedButton from '@/components/themed-button'
+import '../i18n'
+import { useTranslation } from "react-i18next"
 
 
 const Register = () => {
@@ -16,6 +18,7 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isChecked, setChecked] = useState(false);
+  const { t } = useTranslation();
   return (
     <LinearGradient style={styles.constant} colors={["#F2E6EE","rgba(126, 87, 143, 0.87)"]} start={{x:1, y:0}} end={{x:1, y:1}}>
       <View style={styles.constant}>
@@ -25,16 +28,16 @@ const Register = () => {
             <ScrollView style={styles.scroll}>
               <View style={styles.title}>
                 <ThemedText style={styles.text1title}>
-                  SIGN UP
+                  {t("SIGN UP")}
                 </ThemedText>
                 <ThemedText style={styles.text2title}>
-                  Books Store
+                  {t("Books Store")}
                 </ThemedText>
               </View>
 
        <Spacer height={30}/>
                 <ThemedText style={styles.textinput}>
-                  EMAIL ADDRESS:
+                  {t("EMAIL ADDRESS:")}
                 </ThemedText>
               <View style={styles.viewinput}>
                 <EvilIcons name="user" color='#77777' size={30} style={styles.iconinput}/>
@@ -48,7 +51,7 @@ const Register = () => {
                 />
               </View>
               <ThemedText style={styles.textinput}>
-                  PASSWORD:
+                  {t("PASSWORD:")}
                 </ThemedText>
               <View style={styles.viewinput}>
                 <EvilIcons name="lock" color='#77777' size={30} style={styles.iconinput}/>
@@ -61,7 +64,7 @@ const Register = () => {
                 />
               </View>
               <ThemedText style={styles.textinput}>
-                  REENTER PASSWORD:
+                  {t("REENTER PASSWORD:")}
                 </ThemedText>
               <View style={styles.viewinput}>
                 <EvilIcons name="lock" color='#77777' size={30} style={styles.iconinput}/>
@@ -77,7 +80,7 @@ const Register = () => {
       <Spacer height={10}/>
                <View style={styles.constants}>
                 <ThemedButton onPress={handleSubmit} style={{borderRadius: 40, backgroundColor:"#FF0000"}}>
-                <ThemedText style={{color: "#f2f2f2", textAlign:'center', fontWeight:'bold', fontSize: 17}}>SIGN UP</ThemedText>
+                <ThemedText style={{color: "#f2f2f2", textAlign:'center', fontWeight:'bold', fontSize: 17}}>{t("SIGN UP")}</ThemedText>
                 </ThemedButton>
               </View>
        <Spacer height={10}/>
@@ -107,8 +110,8 @@ const Register = () => {
 
 <Spacer height={50}/>
         <View style={styles.end} >
-          <ThemedText style={{color:'#777777'}}>You already have an account.</ThemedText>
-          <Link href='/login' style={styles.lastlink}>Sign in</Link>
+          <ThemedText style={{color:'#777777'}}>{t("You already have an account.")}</ThemedText>
+          <Link href='/login' style={styles.lastlink}>{t("Sign in")}</Link>
         </View>
 
             </ScrollView>

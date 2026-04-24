@@ -1,7 +1,6 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Pressable, SafeAreaView, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Pressable, SafeAreaView, ScrollView, Button } from 'react-native'
 import { Link } from 'expo-router'
 import React, {useState} from 'react'
-import { Button } from '@react-navigation/elements'
 //import { ThemedView } from '@/components/themed-view'
 import { ThemedText } from '@/components/themed-text'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -10,6 +9,7 @@ import Spacer from '@/components/spacer'
 import ThemedButton from '@/components/themed-button'
 import Checkbox from 'expo-checkbox'
 import {EvilIcons, Ionicons} from '@expo/vector-icons'
+import { useTranslation } from "react-i18next"
 function index() {
   const handleSubmit = () => {
       console.log('login from submit')
@@ -18,6 +18,7 @@ function index() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isChecked, setChecked] = useState(false);
+  const { t } = useTranslation();
 
   return (
 
@@ -29,16 +30,16 @@ function index() {
               <ScrollView style={styles.scroll}>
                 {/* <Image source={require('../../assets/images/logo.png')} style={styles.logo}/>  */}
                 <ThemedText style={styles.text1title}>
-                  SIGN IN
+                  {t("Sign-in")}
                 </ThemedText>
 
                 <ThemedText style={styles.text2title}>
-                  Books Store
+                  {t("Books-Store")}
                 </ThemedText>
                 
   <Spacer height={35}/>
                 <ThemedText style={{fontWeight:'bold', paddingLeft: 10}}>
-                  Email:
+                  {t("email")}
                 </ThemedText>
 
               <View style={styles.viewinput}>
@@ -56,7 +57,7 @@ function index() {
 
                 <Spacer height={5}/>
                 <ThemedText style={{fontWeight:'bold', paddingLeft: 10}}>
-                  Password:
+                  {t("password")}
                 </ThemedText>
 
 
@@ -80,17 +81,17 @@ function index() {
                 color={isChecked ? '#0be830' : undefined} // Màu khi tích vào
                 />
                 <ThemedText style={{paddingLeft: 10, color: '#777777'}}>
-                  Remember Me
+                  {t("Remember")}
                 </ThemedText>
                <Link href="/create" style={{ paddingLeft: 60}}>
-                <ThemedText style={{color:'#3399CC', fontSize: 12}}>Forgot your password ?</ThemedText>
+                <ThemedText style={{color:'#3399CC', fontSize: 12}}>{t("forget-pass")}</ThemedText>
               </Link>
  </View>   
               
               <Spacer/>
               <View style={styles.constants}>
                 <ThemedButton onPress={handleSubmit} style={{borderRadius: 40, backgroundColor:"#FF0000"}}>
-                <ThemedText style={{color: "#f2f2f2", textAlign:'center', fontWeight:'bold', fontSize: 17}}>SIGN IN</ThemedText>
+                <ThemedText style={{color: "#f2f2f2", textAlign:'center', fontWeight:'bold', fontSize: 17}}>{t("Sign-in")}</ThemedText>
                 </ThemedButton>
               </View>
 
@@ -127,8 +128,8 @@ function index() {
 
 <Spacer height={55}/>
         <View style={styles.end} >
-          <ThemedText style={{color:'#777777'}}>Don't have an account yet ?</ThemedText>
-          <Link href='/register' style={styles.lastlink}>Sign up</Link>
+          <ThemedText style={{color:'#777777'}}>{t("no-acc")}</ThemedText>
+          <Link href='/register' style={styles.lastlink}>{t("sign-up")}</Link>
         </View>
 
     </ScrollView>

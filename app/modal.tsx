@@ -1,10 +1,14 @@
-import { StyleSheet} from 'react-native'
+import { StyleSheet, Button, View} from 'react-native'
 import { ThemedView } from '@/components/themed-view'
 import { ThemedText } from '@/components/themed-text'
 import { Link } from 'expo-router'
 import React from 'react'
+import { useTranslation } from "react-i18next"
+import i18n from "./i18n";
+import "./i18n"
 
 const Main = () => {
+  const { t } = useTranslation();
   return (
     <ThemedView style={styles.constant}>
       <ThemedText style={{fontWeight: "bold", fontSize: 20, textAlign: "center"}}>
@@ -22,7 +26,12 @@ const Main = () => {
         <Link href="/(dashboard)/profile" style={styles.link}>
           <ThemedText style={{textAlign: 'center'}}>Profile Page</ThemedText>
       </Link>
+    <View>
+      <Button title="English" onPress={() => i18n.changeLanguage("en")} />
+      <Button title="Tiếng Việt" onPress={() => i18n.changeLanguage("vi")} /> 
+    </View>
     </ThemedView>
+    
   )
 }
 
