@@ -28,16 +28,16 @@ const Register = () => {
             <ScrollView style={styles.scroll}>
               <View style={styles.title}>
                 <ThemedText style={styles.text1title}>
-                  {t("SIGN UP")}
+                  {t("Sign-up")}
                 </ThemedText>
                 <ThemedText style={styles.text2title}>
-                  {t("Books Store")}
+                  {t("Books-Store")}
                 </ThemedText>
               </View>
 
        <Spacer height={30}/>
                 <ThemedText style={styles.textinput}>
-                  {t("EMAIL ADDRESS:")}
+                  {t("email")}
                 </ThemedText>
               <View style={styles.viewinput}>
                 <EvilIcons name="user" color='#77777' size={30} style={styles.iconinput}/>
@@ -51,7 +51,7 @@ const Register = () => {
                 />
               </View>
               <ThemedText style={styles.textinput}>
-                  {t("PASSWORD:")}
+                  {t("password")}
                 </ThemedText>
               <View style={styles.viewinput}>
                 <EvilIcons name="lock" color='#77777' size={30} style={styles.iconinput}/>
@@ -64,7 +64,7 @@ const Register = () => {
                 />
               </View>
               <ThemedText style={styles.textinput}>
-                  {t("REENTER PASSWORD:")}
+                  {t("r-pass")}
                 </ThemedText>
               <View style={styles.viewinput}>
                 <EvilIcons name="lock" color='#77777' size={30} style={styles.iconinput}/>
@@ -80,7 +80,7 @@ const Register = () => {
       <Spacer height={10}/>
                <View style={styles.constants}>
                 <ThemedButton onPress={handleSubmit} style={{borderRadius: 40, backgroundColor:"#FF0000"}}>
-                <ThemedText style={{color: "#f2f2f2", textAlign:'center', fontWeight:'bold', fontSize: 17}}>{t("SIGN UP")}</ThemedText>
+                <ThemedText style={{color: "#f2f2f2", textAlign:'center', fontWeight:'bold', fontSize: 17}}>{t("Sign-up")}</ThemedText>
                 </ThemedButton>
               </View>
        <Spacer height={10}/>
@@ -110,8 +110,8 @@ const Register = () => {
 
 <Spacer height={50}/>
         <View style={styles.end} >
-          <ThemedText style={{color:'#777777'}}>{t("You already have an account.")}</ThemedText>
-          <Link href='/login' style={styles.lastlink}>{t("Sign in")}</Link>
+          <ThemedText style={{color:'#777777'}}>{t("have-acc")}</ThemedText>
+          <Link href='/login' style={styles.lastlink}>{t("sign-in")}</Link>
         </View>
 
             </ScrollView>

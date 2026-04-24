@@ -4,8 +4,8 @@ import { ThemedText } from '@/components/themed-text'
 import { Link } from 'expo-router'
 import React from 'react'
 import { useTranslation } from "react-i18next"
-import i18n from "./i18n";
-import "./i18n"
+import i18n from "../i18n";
+import "../i18n"
 
 const Main = () => {
   const { t } = useTranslation();
